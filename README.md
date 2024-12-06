@@ -96,7 +96,7 @@ Anomalies are detected based on the reconstruction error. A threshold is defined
 In the **test set**, **213 anomalies** were detected, which can represent unusual market behavior, significant price shifts, or volatility.
 
 Example output visualizations:
--**Training and Validation Loss for Dataset**:
+- **Training and Validation Loss for Dataset**:
   ![Training and Validation Loss](images/training_and_validation_loss.png)
 - **Reconstruction Error for Test Data**:
    ![Reconstruction Error](images/reconstruction_error.png)
