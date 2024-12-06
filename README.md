@@ -11,15 +11,15 @@ This project demonstrates the use of an **LSTM Autoencoder** for anomaly detecti
 
 ## Project Structure
 
-- `data/` : Folder containing the raw and processed data files.
-- `notebooks/` : Jupyter Notebooks for data exploration and model training.
+- `data/` : Folder containing the processed data files.
+- `notebooks/` : Jupyter Notebooks for the whole project.
 - `model/` : Saved model (`lstm_autoencoder_model.h5`) for anomaly detection.
-- `src/` : Python scripts for model training, preprocessing, and anomaly detection.
+- `images/` : Acquired data visualizations from the model.
 - `README.md` : Project documentation.
 
 ## Requirements
 
-- Python 3.7+
+- Python Version: 3.11.10
 - Required libraries:
   - `numpy`
   - `pandas`
@@ -43,6 +43,7 @@ The stock price data for **Apple (AAPL)** was collected from **Yahoo Finance** u
 - **High**: The highest price of the stock.
 - **Low**: The lowest price of the stock.
 - **Close**: The closing price of the stock.
+- **Adj Close**: The adjusted closing price of the stock.
 - **Volume**: The total trading volume.
 
 Additionally, several technical indicators were calculated using the `TA-Lib` library:
@@ -53,15 +54,15 @@ Additionally, several technical indicators were calculated using the `TA-Lib` li
 - **EMA_20**: 20-period Exponential Moving Average
 - **ADX**: Average Directional Index
 
-These indicators help in capturing the underlying trends and behavior of the stock market data.
+These indicators gives the model more features for it to train.
 
 ## Data Preprocessing
 
 The following preprocessing steps were applied to the data:
 
 1. **Scaling**: The data was scaled using **MinMaxScaler** from `sklearn` to ensure all features are in the range [0, 1].
-2. **Sequence Creation**: Time series data was converted into sequences of length 30, which were then used as inputs to the LSTM Autoencoder.
-3. **Train-Test Split**: The data was split into training and testing sets using `train_test_split`, while maintaining the temporal order of the data.
+2. **Sequence Creation**: Time series data was converted into sequences of length 30 to use them as inputs.
+3. **Train-Test Split**: The data was split into training and testing sets using `train_test_split`.
 
 ## Model Architecture
 
@@ -72,7 +73,7 @@ An **LSTM Autoencoder** architecture was used to reconstruct the input time seri
 - **Reconstruction Loss**: The reconstruction error (difference between original and reconstructed data) is used to identify anomalies.
 
 ### Model Hyperparameters:
-- **LSTM units**: 50 units for both the encoder and decoder layers.
+- **LSTM units**: 128 and 64 units for both the encoder and decoder layers.
 - **Batch Size**: 64
 - **Epochs**: 50
 - **Activation function**: ReLU for the encoder and decoder layers.
@@ -92,13 +93,15 @@ Anomalies are detected based on the reconstruction error. A threshold is defined
 - **Reconstruction Error Plot**: Visualizes the reconstruction error for each data point in the test set.
 - **Anomaly Plot**: Shows detected anomalies along with normal data points.
 
-In the **test set**, **216 anomalies** were detected, which can represent unusual market behavior, significant price shifts, or volatility.
+In the **test set**, **213 anomalies** were detected, which can represent unusual market behavior, significant price shifts, or volatility.
 
 Example output visualizations:
+-**Training and Validation Loss for Dataset**:
+  ![Training and Validation Loss](images/training_and_validation_loss.png)
 - **Reconstruction Error for Test Data**:
    ![Reconstruction Error](images/reconstruction_error.png)
 - **Example Anomalies Detected**:
-   ![Example Anomalies](images/anomalies_example.png)
+   ![Example Anomalies](images/example_anomalies.png)
 
 ## Conclusion
 
@@ -116,8 +119,7 @@ While the model’s performance could be further evaluated using ground truth la
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/lstm-autoencoder-anomaly-detection.git
-   cd lstm-autoencoder-anomaly-detection
+   git clone https://github.com/pratycodes/stock_sentry.git
    ```
 
 2. Install dependencies:
