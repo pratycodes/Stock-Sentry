@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project demonstrates the use of an **LSTM Autoencoder** for anomaly detection in financial time series data, specifically Apple (AAPL) stock prices. Anomalies in stock prices can indicate significant market events, such as crashes, volatility spikes, or other abnormal behavior. The model identifies these anomalies based on reconstruction error, which highlights unusual patterns in the data that deviate from historical trends.
+This project shows how to find anomalies in financial time series data, specifically the stock values of Apple (AAPL), using a **LSTM Autoencoder**. Stock price anomalies may be a sign of major market events like crashes, surges in volatility, or other unusual activity. The model identifies these anomalies based on reconstruction error, which highlights unusual patterns in the data that deviate from historical trends.
 
 ### Key Concepts:
 - **LSTM (Long Short-Term Memory)**: A type of Recurrent Neural Network (RNN) ideal for time-series data.
@@ -107,7 +107,7 @@ Example output visualizations:
 
 This project demonstrates how an **LSTM Autoencoder** can be effectively used for anomaly detection in financial time series data. The model successfully identifies potential anomalies in Apple stock prices, which can be useful for detecting market events like crashes or abnormal price movements.
 
-While the model’s performance could be further evaluated using ground truth labels (if available), the unsupervised nature of the approach makes it valuable for real-world financial data analysis, where labeled anomalies are often scarce.
+While the model’s performance could be further evaluated using ground truth labels based on its availibilty, the unsupervised nature of the approach makes it valuable for real-world financial data analysis, where labeled anomalies are often scarce.
 
 ## Future Improvements
 
