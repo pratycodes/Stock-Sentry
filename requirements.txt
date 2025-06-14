@@ -7,3 +7,9 @@ scikit-learn
 matplotlib
 yfinance
 ta-lib
+
+ipykernel
+
+#for Apple Sillicon only
+tensorflow-macos
+tensorflow-metal
